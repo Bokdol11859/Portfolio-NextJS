@@ -33,7 +33,7 @@ const Hero = (props: Props) => {
           <span>{text}</span>
           <Cursor cursorColor="#51abcb" />
         </h1>
-        <div className="pt-5">
+        <div className="pt-5 ">
           <Link href="#about">
             <button className="heroButton">About</button>
           </Link>
