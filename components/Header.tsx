@@ -64,7 +64,7 @@ const Header = (props: Props) => {
           bgColor="transparent"
         />
         <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
-          Get In Touch
+          Contact Me
         </p>
       </motion.div>
     </header>
