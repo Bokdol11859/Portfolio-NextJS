@@ -10,8 +10,8 @@ type Props = {};
 
 const ContactMe = (props: Props) => {
   return (
-    <div className="h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-4xl px-10 justify-evenly mx-auto items-center">
-      <h3 className="absolute ml-6 top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
+    <div className="h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-4xl px-10 justify-evenly mx-auto items-center overflow-x-hidden">
+      <h3 className="absolute ml-6 top-20 uppercase tracking-[20px] text-gray-500 text-2xl">
         Contact
       </h3>
       <div className="flex flex-col space-y-10">
