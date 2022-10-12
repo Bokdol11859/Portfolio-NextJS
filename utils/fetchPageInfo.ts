@@ -1,12 +1,17 @@
 import { PageInfo } from "../typings";
+import { groq } from "next-sanity";
+import { sanityClient } from "../sanity";
+
+type Data = {
+  pageInfo: PageInfo;
+};
 
 export const fetchPageInfo = async () => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/getPageInfo`
-  );
+  const query = groq`
+    *[_type == "pageInfo"][0]
+`;
 
-  const data = await res.json();
-  const pageInfo: PageInfo = data.pageInfo;
+  const pageInfo: PageInfo = await sanityClient.fetch(query);
 
   console.log(pageInfo);
 
