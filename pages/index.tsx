@@ -26,7 +26,7 @@ type Props = {
 
 const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
   return (
-    <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#51abcb]/80">
+    <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#51abcb]/80 scrollbar-none">
       <Head>
         <title>박준열 - 프론트엔드 개발자</title>
       </Head>
@@ -36,27 +36,27 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 
       {/* Hero */}
       <section id="hero" className="snap-center">
-        <Hero />
+        <Hero pageInfo={pageInfo} />
       </section>
 
       {/* About */}
       <section id="about" className="snap-center">
-        <About />
+        <About pageInfo={pageInfo} />
       </section>
 
       {/* Experience */}
 
       <section id="experience" className="snap-center">
-        <WorkExperience />
+        <WorkExperience experiences={experiences} />
       </section>
 
       {/* Skills */}
       <section id="skills" className="snap-center">
-        <Skills />
+        <Skills skills={skills} />
       </section>
       {/* Projects */}
       <section id="projects" className="snap-center">
-        <Projects />
+        <Projects projects={projects} />
       </section>
       {/* Contact Me */}
       <section id="contact" className="snap-center">

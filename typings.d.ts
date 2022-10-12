@@ -23,6 +23,7 @@ export interface PageInfo extends SanityBody {
   name: string;
   phoneNumber: string;
   profilePic: Image;
+  writerTitle: string[];
 }
 
 export interface Technology extends SanityBody {
@@ -40,7 +41,7 @@ export interface Skill extends SanityBody {
 export interface Experience extends SanityBody {
   _type: "experience";
   company: string;
-  compantImage: Image;
+  companyImage: Image;
   dateStarted: date;
   dateEnded: date;
   isCurrentlyWorkingHere: boolean;

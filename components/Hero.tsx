@@ -1,18 +1,17 @@
 import Link from "next/link";
 import React from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
+import { urlFor } from "../sanity";
+import { PageInfo } from "../typings";
 import BackgroundCircles from "./BackgroundCircles";
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
-const Hero = (props: Props) => {
+const Hero = ({ pageInfo }: Props) => {
   const [text, count] = useTypewriter({
-    words: [
-      "Hi, My Name is Eric Park",
-      "npx create-next-app --typescript",
-      "python manage.py runserver",
-      "#include <bits/stdc++.h>",
-    ],
+    words: pageInfo?.writerTitle,
     loop: true,
     delaySpeed: 1000,
   });
@@ -22,12 +21,12 @@ const Hero = (props: Props) => {
       <BackgroundCircles />
       <img
         className="relative rounded-full h-32 w-32 mx-auto object-cover"
-        src="/logo.png"
+        src={urlFor(pageInfo?.heroImage).url()}
         alt="logo"
       />
       <div className="z-20">
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
-          Software Engineer
+          {pageInfo?.role}
         </h2>
         <h1 className="text-5xl lg:text-6xl font-semibold px-10">
           <span>{text}</span>
