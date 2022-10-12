@@ -7,12 +7,12 @@ const Projects = (props: Props) => {
   const projects = [1, 2, 3, 4, 5];
 
   return (
-    <div className="h-screen flex relative flex-col text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 min-h-screen justify-evenly xl:space-y-0 mx-auto items-center">
+    <div className="h-screen flex relative flex-col text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 min-h-screen justify-evenly xl:space-y-0 mx-auto items-center ">
       <h3 className="absolute ml-6 top-20 uppercase tracking-[20px] text-gray-500 text-2xl">
         Projects
       </h3>
 
-      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20">
+      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 thin scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#51abcb]/80">
         {projects.map((project, i) => (
           <motion.div
             initial={{ opacity: 0 }}
