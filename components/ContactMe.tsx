@@ -32,23 +32,26 @@ const ContactMe = (props: Props) => {
           <span className="underline underline-offset-4 decoration-[#51abcb]/50">
             커피챗
           </span>{" "}
-          좋아합니다. 편하게 연락주세요!
+          좋아합니다.
+        </h4>
+        <h4 className="text-2xl lg:text-4xl font-semibold text-center !mt-3">
+          편하게 연락주세요!
         </h4>
         <div className="space-y-6">
           <div className="flex items-center space-x-5 justify-center">
             <PhoneIcon className="text-[#51abcb] h-7 w-7 animate-pulse" />
-            <p className="text-2xl lg:text-4xl">+82 010-8909-6141</p>
+            <p className="text-xl lg:text-4xl">+82 010-8909-6141</p>
           </div>
           <div className="flex items-center space-x-5 justify-center">
             <EnvelopeIcon className="text-[#51abcb] h-7 w-7 animate-pulse" />
-            <p className="text-2xl lg:text-4xl">eric010506@naver.com</p>
+            <p className="text-xl lg:text-4xl">eric010506@naver.com</p>
           </div>
           <div className="flex items-center space-x-5 justify-center">
             <MapPinIcon className="text-[#51abcb] h-7 w-7 animate-pulse" />
-            <p className="text-2xl lg:text-4xl">대한민국 서초구 잠원동</p>
+            <p className="text-xl lg:text-4xl">대한민국 서초구 잠원동</p>
           </div>
         </div>
-        <form
+        {/* <form
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col space-y-2 w-fit mx-auto "
         >
@@ -84,7 +87,7 @@ const ContactMe = (props: Props) => {
             <BellIcon className="absolute h-7 w-7 " />
             <p>띵동</p>
           </button>
-        </form>
+        </form> */}
       </div>
     </div>
   );
