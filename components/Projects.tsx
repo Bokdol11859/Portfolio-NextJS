@@ -1,12 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Project } from "../typings";
+import { textChangeRangeIsUnchanged } from "typescript";
+import { urlFor } from "../sanity";
+import { useRouter } from "next/router";
 
 type Props = {
   projects: Project[];
 };
 
 const Projects = ({ projects }: Props) => {
+  const router = useRouter();
+
   return (
     <div className="h-screen flex relative flex-col text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 min-h-screen justify-evenly xl:space-y-0 mx-auto items-center ">
       <h3 className="absolute ml-6 top-20 uppercase tracking-[20px] text-gray-500 text-2xl">
@@ -31,8 +36,11 @@ const Projects = ({ projects }: Props) => {
               transition={{ duration: 1.2 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              src="/project_1.png"
+              src={urlFor(project.image).url()}
               className="max-w-sm md:max-w-xl xl:max-w-5xl"
+              onClick={() => {
+                router.push(project.linkToBuild);
+              }}
             />
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
               <h4 className="text-4xl font-semibold text-center">
