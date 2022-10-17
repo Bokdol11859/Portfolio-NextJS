@@ -59,7 +59,7 @@ const Header = ({ socials }: Props) => {
         <p className="px-2">MY BLOG</p>
         <HomeIcon
           onClick={() => {
-            router.push("/blog/");
+            router.push("https://bokdolblog.vercel.app");
           }}
           width={20}
           height={20}
