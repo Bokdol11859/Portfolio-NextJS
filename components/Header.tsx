@@ -54,17 +54,25 @@ const Header = ({ socials }: Props) => {
         transition={{
           duration: 1.5,
         }}
-        className="flex flex-row items-center text-gray-300 cursor-pointer"
+        className="flex flex-row items-center justify-center text-gray-300 cursor-pointer"
       >
-        <span
+        <p
+          className="uppercase hidden md:inline-flex text-lg text-gray-400"
           onClick={() => {
             router.push("https://bokdolblog.vercel.app");
           }}
-          className="flex items-center justify-center"
         >
-          <p className="px-2">MY BLOG</p>
-          <HomeIcon width={20} height={20} />
-        </span>
+          Blog
+        </p>
+        <SocialIcon
+          key="https://bokdolblog.vercel.app"
+          url="https://bokdolblog.vercel.app"
+          fgColor="gray"
+          bgColor="transparent"
+          onClick={() => {
+            router.push("https://bokdolblog.vercel.app");
+          }}
+        />
       </motion.div>
     </header>
   );
