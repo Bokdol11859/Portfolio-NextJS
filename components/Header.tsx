@@ -2,12 +2,15 @@ import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import { Social } from "../typings";
+import { HomeIcon } from "@heroicons/react/24/solid";
+import { useRouter } from "next/router";
 
 type Props = {
   socials: Social[];
 };
 
 const Header = ({ socials }: Props) => {
+  const router = useRouter();
   return (
     <header className="sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center">
       <motion.div
@@ -53,15 +56,14 @@ const Header = ({ socials }: Props) => {
         }}
         className="flex flex-row items-center text-gray-300 cursor-pointer"
       >
-        <SocialIcon
-          className="cursor-pointer"
-          network="email"
-          fgColor="gray"
-          bgColor="transparent"
+        <p className="px-2">MY BLOG</p>
+        <HomeIcon
+          onClick={() => {
+            router.push("/blog/");
+          }}
+          width={20}
+          height={20}
         />
-        <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
-          Contact Me
-        </p>
       </motion.div>
     </header>
   );
